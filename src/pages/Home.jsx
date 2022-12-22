@@ -27,7 +27,7 @@ export default function Home() {
                     return (
                         <NFTCard image={NFT.value.image} title={NFT.value.title} description={NFT.value.description} />
                     )
-                }) : <div>No NFTs found</div>}
+                }) : <div className='my-10'>No NFTs found! You may try explore!</div>}
             </section>
           </div>
         )}
