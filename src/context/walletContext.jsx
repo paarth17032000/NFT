@@ -1,20 +1,10 @@
-import React, { useState,useEffect, createContext } from "react";
+import React, { useState, createContext } from "react";
 import Web3 from "web3";
-// import { createUser } from "../api/index";
-// import { ethers } from "ethers";
-// import { solidityKeccak256, arrayify } from "ethers/lib/utils";
 
 export const WalletContext = createContext();
 
 export const WalletProvider = ({ children }) => {
   const [currentAccount, setCurrentAccount] = useState();
-  const [ensName, setEnsName] = useState();
-  const [ensAvatar, setEnsAvatar] = useState();
-  const [walletLoading, setWalletLoading] = useState(false);
-  const [isConnected, setIsConnected] = useState(false);
-  const [balance, setBalance] = useState(0);
-
-  const [isConnecting, setIsConnecting] = useState(false);
 
   const detectProvider = () => {
     let provider;
@@ -57,19 +47,7 @@ export const WalletProvider = ({ children }) => {
     }
       setIsConnecting(false);
     }
-    // props.onLogin(provider);
   };
-
-  const onLogout = () => {
-    setIsConnected(false);
-  };
-
-
-  useEffect(() => {
-    // if (window.ethereum && window.ethereum.selectedAddress) {
-    //   checkIfWalletIsConnected();
-    // }
-  }, []);
 
   return (
     <WalletContext.Provider
