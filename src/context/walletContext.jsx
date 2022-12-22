@@ -27,7 +27,6 @@ export const WalletProvider = ({ children }) => {
           "Not window.ethereum provider. Do you have multiple wallet installed ?"
         );
       }
-      setIsConnecting(true);
       await provider.request({
         method: "eth_requestAccounts",
       });
@@ -42,10 +41,7 @@ export const WalletProvider = ({ children }) => {
           "ether"
       );
 
-      setBalance(Number(accBalanceEth).toFixed(6));
-      setIsConnected(true);
     }
-      setIsConnecting(false);
     }
   };
 
